@@ -19,6 +19,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
+      
         player.GetComponent<Pl_move>().enabled = false;
         pauseUI.SetActive(true);
         Time.timeScale = 0f;

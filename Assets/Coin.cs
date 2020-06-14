@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
 {
      public AudioManager audio_player;
     Animator anim;
-    float delay = 1f;
+   // float delay = 1f;
 
     void Start()
     {

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 [System.Serializable]
 public class Pl_move : MonoBehaviour
 {
-
+    public GameObject left_b;
+    public GameObject right_b;
 
     Player_off player_Off;
     public AudioManager audio_player;
@@ -30,10 +32,14 @@ public class Pl_move : MonoBehaviour
     [SerializeField]
     Animator anim;
     public int score;
-  
+
+    public bool move;
+    public bool button_up;
+
     void Start()
-    {   
-    
+    {
+        move = false;
+        button_up = false;
         player_Off =transform.GetComponent<Player_off>();
         Application.targetFrameRate = 60;
         rb2D = transform.GetComponent<Rigidbody2D>();
@@ -45,11 +51,11 @@ public class Pl_move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+
         lastVelocity = rb2D.velocity;
         grounded = Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, GroundLength, groundLayer) ||
             Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, GroundLength, groundLayer);
-  
+
         if ((direction > 0 && !facingRight) || (direction < 0 && facingRight))
         { Flip(); }
 
@@ -74,34 +80,81 @@ public class Pl_move : MonoBehaviour
             anim.SetBool("Usual_fall", false);
             if (long_fall)
             {
-               audio_player.Play("Fall");
+                audio_player.Play("Fall");
                 long_fall = false;
                 player_Off.enabled = true;
             }
         }
 
-        if (Input.touchCount > 0)
+        //if (Input.touchCount > 0)
+        //{
+        //    anim.SetBool("fall", false);
+        //    Touch touch = Input.GetTouch(0);
+        //    Vector3 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+        //    if (touchPos.x > 0)
+        //        direction = 1;
+        //    else if (touchPos.x < 0)
+        //        direction = -1;
+        //    else direction = 0;
+        //    if (grounded && touch.phase == TouchPhase.Stationary && jump_h < max_h)
+        //    {
+        //        jump_h += 10f * Time.deltaTime;
+        //    }
+        //    else if (grounded && (touch.phase == TouchPhase.Ended || jump_h > max_h))
+        //    {
+        //        Jump();
+        //    }
+        //}
+
+        if (move && grounded)
         {
             anim.SetBool("fall", false);
-            Touch touch = Input.GetTouch(0);
-            Vector3 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-            if (touchPos.x > 0)
-                direction = 1;
-            else if (touchPos.x < 0)
-                direction = -1;
-            else direction = 0;
-            if (grounded && touch.phase == TouchPhase.Stationary && jump_h < max_h)
+
+            if (grounded && jump_h < max_h)
             {
                 jump_h += 10f * Time.deltaTime;
             }
-            else if (grounded && (touch.phase == TouchPhase.Ended || jump_h > max_h))
+            else if (grounded && ( jump_h > max_h))
             {
                 Jump();
-            }
+              
+            } 
+
+        }else if(button_up && grounded)
+        {
+            Jump();
+            button_up = false;
         }
 
     }
-
+    public void PointerDownLeft()
+    {
+        right_b.SetActive(false);
+    move = true;
+        button_up = false;
+        direction = -1;
+    }
+    public void PointerDownRight()
+    {
+        left_b.SetActive(false);
+        move = true;
+        button_up = false;
+        direction = 1;
+    }
+    public void PointerUpLeft()
+    {
+        right_b.SetActive(true);
+        button_up = true;
+        move = false;
+       
+    }
+    public void PointerUpRight()
+    {
+        left_b.SetActive(true);
+        move = false;
+        button_up = true;
+     
+    }
     void Jump()
         {
             audio_player.Play("Jump");
@@ -116,17 +169,21 @@ public class Pl_move : MonoBehaviour
         {
             if (col.gameObject.tag == "wall")
             {
+         
                 Vector3 contactPoint = col.contacts[0].point;
                 Vector3 center = col.collider.bounds.max;
-                if (contactPoint.y < center.y*2)
-                {
+               // if (contactPoint.y < center.y*2)
+                //{
                 audio_player.Play("Collide");
                     var speed = lastVelocity.magnitude;
                     var Reflect_Dir = Vector3.Reflect(lastVelocity.normalized / 1.5f, col.contacts[0].normal);
                     rb2D.velocity = Reflect_Dir * Mathf.Max(speed);
-                }
+             
+                   
+           // }
+            
 
-            }
+        }
           
             
 

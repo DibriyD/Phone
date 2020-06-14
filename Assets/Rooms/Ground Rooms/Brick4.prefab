@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2665749936834154817}
   - component: {fileID: 5376773135962149056}
   - component: {fileID: 6298257969274254580}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: One_brick
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 349399257915665493}
   - component: {fileID: 6736326997274035706}
   - component: {fileID: 7887401844532284495}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Brick4
   m_TagString: wall
   m_Icon: {fileID: 0}

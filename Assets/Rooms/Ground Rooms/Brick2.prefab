@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 3213163512076289854}
   - component: {fileID: 3213163512076289855}
   - component: {fileID: 3213163512076289824}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Brick2
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 3213163512844461706}
   - component: {fileID: 3213163512844461707}
   - component: {fileID: 3213163512844461705}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Terrain (16x16) 1_9 (3)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 6459757262867099851}
   - component: {fileID: 84251178109707352}
   - component: {fileID: 8298579533255850904}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Terrain (16x16) 1_9 (4)
   m_TagString: wall
   m_Icon: {fileID: 0}

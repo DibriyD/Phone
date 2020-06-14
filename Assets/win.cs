@@ -10,6 +10,9 @@ public class win : MonoBehaviour
     public GameObject pause;
     public Text current;
     public Text best;
+    public GameObject left;
+    public GameObject right;
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
@@ -18,6 +21,8 @@ public class win : MonoBehaviour
             score = col.gameObject.GetComponent<Pl_move>().score;
             winn.SetActive(true);
             pause.SetActive(false);
+            left.SetActive(false);
+            right.SetActive(false);
             Time.timeScale =0f;
             
             if (score >= PlayerPrefs.GetInt("High_score"))

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2381048929102501923}
   - component: {fileID: 2959949086063719141}
   - component: {fileID: 2024826782041835802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mud_platform4
   m_TagString: Mud
   m_Icon: {fileID: 0}

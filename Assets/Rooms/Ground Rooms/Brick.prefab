@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 7424136479662692457}
   - component: {fileID: 7424136479662692456}
   - component: {fileID: 7424136479662692471}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Brick
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 7424136480438270429}
   - component: {fileID: 7424136480438270428}
   - component: {fileID: 7424136480438270430}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Terrain (16x16) 1_9 (3)
   m_TagString: wall
   m_Icon: {fileID: 0}

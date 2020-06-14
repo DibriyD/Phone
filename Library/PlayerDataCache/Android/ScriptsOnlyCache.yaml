@@ -32,13 +32,17 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -201,6 +205,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11328}
     - Class: 114
       Script: {instanceID: 11428}
+    - Class: 114
+      Script: {instanceID: 11486}
     - Class: 114
       Script: {instanceID: 11492}
     - Class: 114
@@ -368,7 +374,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: d9840e52b053987960418f5f67403af3
+      Hash: 37042c749d2c16869b7427bdc63fbda7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: win
@@ -728,7 +734,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: 8582ba6f61e86672326f29bccdcc773d
+      Hash: a16738e23a321fa879e5d8cb0cd5db31
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Pl_move
@@ -748,4 +754,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Main_menu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: "C:/Users/User/Desktop/\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430/\u0430\u043D\u0434\u0440\u043E\u0438\u0434/Android_game3.apk"
+  playerPath: "C:/Users/User/Desktop/\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430/\u0430\u043D\u0434\u0440\u043E\u0438\u0434/Android_game5.apk"
